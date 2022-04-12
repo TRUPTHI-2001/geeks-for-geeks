@@ -1,0 +1,42 @@
+import java.util.*;
+ public class Main{
+    int cursum=0,i,j;
+    
+    void subarray(int a[],int n,int s)
+    {
+        for(i=0;i<n;i++)
+        {
+            
+            cursum=a[i];
+            for(j=i+1;j<=n;j++)
+            {
+                
+                if(cursum==s)
+                {
+                    int p=j-1;
+                    System.out.println(i+" "+p);
+                }
+                if(cursum>s || j==n)
+                    break;
+                cursum=cursum+a[j];
+            }
+        }
+    }
+
+     public static void main(String []args){
+         
+         Scanner sc = new Scanner(System.in);
+         int n=sc.nextInt();
+        
+         int i,j;
+         int a[]=new int [n];
+         for( i=0;i<n;i++)
+         {
+             a[i]=sc.nextInt();
+         }
+          int s=sc.nextInt();
+         Main array= new Main();
+         array.subarray(a,n,s);
+       
+     }
+}
