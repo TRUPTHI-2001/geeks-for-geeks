@@ -1,0 +1,57 @@
+
+   
+import java.util.*;
+ public class Main{
+     
+     public static void frequency(int a[],int n)
+     {
+         int i,j;
+         int maxcount=0;
+         int count=0,index=-1;
+         for(i=0;i<n;i++)
+         {
+             
+             count=0;
+             for(j=0;j<n;j++)
+             {
+                 if(a[i]==a[j])
+                 {
+                     count++;
+                 }
+                 
+             }
+             if(count>maxcount)
+                 {
+                     maxcount=count;
+                      index=i;
+            
+         }
+         
+        
+     }
+     
+     
+            if(maxcount>n/2)
+         {
+            
+             System.out.println(a[index]);
+         }  
+     }  
+
+     public static void main(String []args){
+         
+         Scanner sc = new Scanner(System.in);
+          System.out.println("enter number of elements");
+         int n=sc.nextInt();
+        
+         int i,j;
+         int a[]=new int [n];
+          System.out.println("enter array elements");
+         for( i=0;i<n;i++)
+         {
+             a[i]=sc.nextInt();
+         }
+        frequency(a,n);
+       
+     }
+}
