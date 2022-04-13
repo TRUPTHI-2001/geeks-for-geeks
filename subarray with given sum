@@ -1,39 +1,47 @@
 import java.util.*;
  public class Main{
-    int cursum=0,i,j;
     
-    void subarray(int a[],int n,int s)
+    void subarray(int arr[],int n,int sum)
     {
-        for(i=0;i<n;i++)
-        {
-            
-            cursum=a[i];
-            for(j=i+1;j<=n;j++)
-            {
-                
-                if(cursum==s)
-                {
-                    int p=j-1;
-                    System.out.println(i+" "+p);
+        int curr_sum, i, j;
+
+        // Pick a starting point
+        for (i = 0; i < n; i++) {
+            curr_sum = arr[i];
+
+            // try all subarrays starting with 'i'
+            for (j = i + 1; j <=n; j++) {
+                if (curr_sum == sum) {
+                    int p = j-1 ;
+                    System.out.println(
+                        "Sum found between indexes " + i
+                        + " and " + p);
+                    return ;
                 }
-                if(cursum>s || j==n)
+                if (curr_sum > sum || j == n)
                     break;
-                cursum=cursum+a[j];
+                curr_sum = curr_sum + arr[j];
             }
         }
+
+        System.out.println("No subarray found");
+        
     }
 
      public static void main(String []args){
          
          Scanner sc = new Scanner(System.in);
+         System.out.println("enter number of elements");
          int n=sc.nextInt();
         
          int i,j;
          int a[]=new int [n];
+          System.out.println("enter array elements");
          for( i=0;i<n;i++)
          {
              a[i]=sc.nextInt();
          }
+          System.out.println("enter sum");
           int s=sc.nextInt();
          Main array= new Main();
          array.subarray(a,n,s);
