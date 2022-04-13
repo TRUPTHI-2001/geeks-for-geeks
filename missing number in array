@@ -1,0 +1,47 @@
+import java.util.*;
+ public class Main{
+    
+   
+        public void distinct(int a[],int n)
+        {
+            int i,j;
+            int bsum=0,sum=0;
+            int b[]=new int [n+1];
+            for(i=1;i<=n;i++)
+            {
+                b[i]=i;
+            }
+            for(i=1;i<=n;i++)
+            {
+                bsum=bsum+b[i];
+                
+            }
+            for(i=1;i<n;i++)
+            {
+                sum=sum+a[i];
+                
+            }
+             System.out.println("the missing element is");
+            System.out.println(bsum-sum);
+        }
+    
+
+     public static void main(String []args){
+         
+         Scanner sc = new Scanner(System.in);
+         System.out.println("enter number of elements");
+         int n=sc.nextInt();
+        
+         int i,j;
+         int a[]=new int [n];
+          System.out.println("enter array elements");
+         for( i=1;i<n;i++)
+         {
+             a[i]=sc.nextInt();
+         }
+         
+         Main array= new Main();
+         array.distinct(a,n);
+       
+     }
+}
