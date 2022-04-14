@@ -1,0 +1,22 @@
+// Java program to print all elements that
+// appear more than once.
+
+import java.util.*;
+class Main {
+
+    // function to find repeating elements
+    
+       
+    public static void main(String args[])
+    {
+      Scanner sc= new Scanner(System.in);
+      String str=sc.nextLine();
+      
+      String a[]=str.split("hi");
+      int i,j;
+      for(i=a.length-1;i>=0;i--)
+      {
+          System.out.print(a[i]+" ");
+      }
+    }
+}
