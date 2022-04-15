@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        String str;
+       
+        Scanner sc=new Scanner(System.in);
+        sc.useDelimiter("\\t");
+        while(true){
+            
+        str=sc.next();
+        break;
+        }
+        System.out.println(str);
+        String array[]=str.split("\\n");
+        int i;
+        for(i=array.length-1;i>=0;i--)
+        {
+            System.out.println(array[i]);
+        }
+       
+    }
+}
