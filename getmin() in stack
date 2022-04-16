@@ -1,0 +1,94 @@
+import java.util.*;
+public class Main
+
+{   int top;
+    int capacity;
+    int[] stack;
+    int min;
+    Main()
+    {
+        top=-1;
+        capacity=10;
+        stack=new int[capacity];
+    }
+    public boolean isempty()
+    {
+        return top==-1;
+    }
+     public boolean isfull()
+    {
+        return top==capacity-1;
+    }
+    
+    public void pushh(int data)
+    
+    {  
+        if(isempty())
+        {
+           stack[++top]=data;
+            min=data;
+        }
+        else if(data>=min)
+        {
+            stack[++top]=data;
+        }
+        else
+        {
+           stack[++top]=(2*data-min);
+            min=data;
+            
+        }
+       
+        
+    }
+    public void pop()
+    {
+        if(isempty())
+        {
+            System.out.println("stack empty");
+        }
+        else if(stack[top]>=min)
+        {
+           top--;
+        }
+        else
+        {
+            min=(2*min-stack[top]);
+            top--;
+        }
+    }
+   
+    public void getmin()
+    {
+       
+            System.out.println(min);
+       
+    }
+     public void display()
+    {
+        int i;
+        System.out.println("the stack elements are");
+        for(i=top;i>=0;i--)
+        {
+            System.out.println(stack[i]);
+        }
+    }
+	public static void main(String[] args) {
+	    Scanner sc =new Scanner(System.in);
+	    Main st=new Main();
+	   
+	    st.pushh(8);
+	    st.pushh(10);
+	    st.pushh(6);
+	    st.pushh(3);
+	    st.pushh(7);
+	   
+	    st.getmin();
+	   st.pop();
+	    st.pop();
+	   st.display();
+	   st.getmin();
+	     
+	    
+	}
+}
