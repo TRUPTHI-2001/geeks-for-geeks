@@ -1,0 +1,59 @@
+import java.util.*;
+public class Main
+
+{   int top;
+    int capacity;
+    int[] stack;
+    Main()
+    {
+        top=-1;
+        capacity=10;
+        stack=new int[capacity];
+    }
+    public boolean isempty()
+    {
+        return top==-1;
+    }
+     public boolean isfull()
+    {
+        return top==capacity-1;
+    }
+    public void push(int data)
+    {
+        if(isfull())
+        {
+            System.out.println("stack full");
+        }
+         stack[++top]=data;
+    }
+    public void pop()
+    {
+        if(isempty())
+        {
+            System.out.println("stack empty");
+        }
+        top--;
+    }
+    public void display()
+    {
+        int i;
+        System.out.println("the stack elements are");
+        for(i=top;i>=0;i--)
+        {
+            System.out.println(stack[i]);
+        }
+    }
+	public static void main(String[] args) {
+	    Scanner sc =new Scanner(System.in);
+	    Main st=new Main();
+	    st.push(10);
+	    st.push(20);
+	    st.push(30);
+	    st.push(40);
+	    st.display();
+	    st.pop();
+	    st.display();
+	     st.pop(); st.pop(); st.pop(); st.pop();
+	    
+	}
+}
