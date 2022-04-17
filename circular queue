@@ -1,0 +1,112 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+  int maxsize;
+  int r, f;
+  int a[];
+  int cursize;
+    Main ()
+  {
+    this.maxsize = 5;
+    this.r = -1;
+    this.f = 0;
+    this.cursize=0;
+    this.a = new int[maxsize];
+  }
+  public boolean qfull ()
+  {
+    if (cursize== maxsize - 1)
+      {
+	return true;
+      }
+    else
+      {
+	return false;
+      }
+  }
+  public void enqueue (int data)
+  {
+    if (qfull ())
+      {
+	System.out.println ("q full");
+      }
+    else
+      {
+        r=(r+1)%maxsize;
+	a[r] = data;
+	cursize++;
+
+      }
+  }
+  public void display ()
+  {
+        if (qempty ())
+      {
+	System.out.println ("q empty");
+      }
+      else{
+    System.out.println ("the queue elements are");
+    int i;
+    int t=f;
+    for (i = 1; i <= cursize; i++)
+      {
+	System.out.println (a[t]);
+	t=(t+1)%maxsize;
+      }}
+  }
+  public boolean qempty ()
+  {
+    if (cursize==0)
+      {
+	return true;
+      }
+    else
+      {
+	return false;
+      }
+  }
+  public void dequeue ()
+  {
+
+    if (qempty ())
+      {
+	System.out.println ("q empty");
+      }
+    else
+      {
+        f=(f+1)%maxsize;
+        cursize--;
+        
+      }if(f>r)
+      {
+          f=0;
+          r=-1;
+      }
+  }
+
+  public static void main (String[]args)
+  {
+    Main q = new Main ();
+   q.enqueue(10);
+   q.enqueue(20);
+   q.enqueue(30);
+   q.enqueue(40);
+    q.display ();
+    q.dequeue();
+     q.dequeue();
+      q.dequeue();
+       q.enqueue(10);
+   q.enqueue(20);
+   
+       q.display ();
+   
+   
+  }
+}
