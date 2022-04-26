@@ -1,0 +1,15 @@
+class Solution
+{
+   
+    String modify(String S)
+    {
+        // your code here
+        String res="";
+        String []ss=S.split(" ");
+        for(int i=0;i<ss.length;i++)
+        {
+            res=res+ss[i];
+        }
+        return res;
+    }
+}
