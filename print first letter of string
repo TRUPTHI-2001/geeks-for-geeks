@@ -1,0 +1,10 @@
+class Solution {
+    String firstAlphabet(String S) {
+        String res="";
+       String[] sp=S.split(" ");
+       for(int i=0;i<sp.length;i++)
+       {
+           res=res+sp[i].charAt(0);
+       }
+       return res;
+    }
